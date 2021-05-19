@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>TAMA Finance</title>
+		<link rel="shortcut icon" type="image/png" href="https://tama.finance/images/favicon.png">
+		<link href="./bootstrap-4.4.1.css" rel="stylesheet">
+		<link rel="stylesheet" href="./rfg4ves.css">
+		<style type="text/css">
+		html { scroll-behavior: smooth; }
+		.marine { font-family: marine, sans-serif; font-weight: 400; font-style: normal; }
+		.marine-bold { font-family: marine, sans-serif; font-weight: 700; font-style: normal; }
+		.komu { font-family: komu-a, sans-serif; font-weight: 400; font-style: normal; }
+		body { background: #F4EACE; font-family: marine, sans-serif; font-weight: normal; }
+		a:hover { color: initial; }
+		.w1080 { max-width: 1080px; margin: 0 auto; }
+		.header-block { position: fixed; margin-left: -550px; width: 1100px; left: 50%; z-index: 4 }
+		.offset-bg { position: fixed; width: 100%; height: 160px; z-index: 2;		/* background: rgb(240,227,195); */ background: linear-gradient(180deg, rgb(240 227 195) 40%, rgb(240 227 195 / 1%) 100%); }
+		.navbar { background: #FEFAE0; border-radius: 60px; margin-top: 60px; height: 60px; z-index: 3 }
+		.tamarin-logo { position: absolute; left: 50%; margin-left: -120px; width: 240px; margin-top: -21px; margin-right: 0; padding: 0; }
+		.nav-link { display: block; padding: 1rem; font-family: 'marine'; color: #333333; font-weight: 700; text-transform: uppercase; font-size: 16px; letter-spacing: 0.1em; text-align: center; margin-left: auto; }
+		.nav-item { margin: 0 40px; }
+		.navbar-nav li:nth-child(3) { width: 230px; }
+		.main-bg { background-image: url(images/bg.png); background-repeat: no-repeat; background-size: cover; height: 70vh; margin: 0; height: 70%; background-attachment: fixed; background-size: cover; }
+		section { height: 100vh; display: flex; align-items: center; justify-content: center; }
+		.container { margin-top: 120px; }
+		.stats-display { }
+		.pretitle, .endtitle { color: #333333; font-size: 16px; }
+		.figures { color: #E5661D; font-size: 62px; line-height: initial; }
+		.d-web { display: block !important; }
+		.d-mob { display: none !important; }
+		.token-address { background: #FEFAE0; width: max-content; margin: 0 auto; padding: 15px 30px; border-radius: 60px; letter-spacing: 0.1em; color: #E5661D; }
+		.token-address span { color: #333333; word-wrap: break-word; }
+		.bsc-cta { letter-spacing: 0.1em; color: #E5661D; padding: 20px; text-transform: uppercase; }
+		.anchor { display: block; height: 210px; visibility: hidden; }
+		/*#tokenomics {padding: 120px 0;}
+		#safety {padding: 170px 0;}
+		#onboarding {padding: 120px 0;}
+		#charity  {padding: 120px 0;}*/
+		#tokenomics { padding-top: 120px; }
+		#tokenomics .container { margin-top: 0; }
+		.section-title { font-size: 62px; margin-bottom: 30px; }
+		.section-title span { color: #E5661D; }
+		.feature-block { margin-right: 30px; }
+		.feature-block h4, ol li { text-transform: uppercase; font-size: 16px; letter-spacing: 0.1em; font-weight: bold; }
+		p, .feature-block p { font-size: 16px; letter-spacing: 0.05em; }
+		.feature-block a, .link { color: #E5661D; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: underline; }
+		.center-objects { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; justify-content: center; margin-top: -60px; }
+		.charity-stats { margin: 40px 60px 70px; }
+		ul { display: flex; }
+		ul li a { padding: 0 15px; }
+		li { list-style: none; }
+		.social-icos ul { display: flex; padding: 0; margin: 0; list-style: none; }
+		}
+		.social-icos > li { display: flex; justify-content: space-around; list-style: none; }
+		.social-icos > li img { width: 32px; height: 100%; }
+		ol { max-width: 380px; counter-reset: my-awesome-counter; list-style: none; padding-left: 40px; margin-left: 45px; }
+		ol li { margin: 0 0 0.5rem 0; counter-increment: my-awesome-counter; position: relative; margin-bottom: 50px; }
+		ol li::before { font-family: 'komu-a', sans-serif; content: "0"counter(my-awesome-counter); font-size: 32px; position: absolute; --size: 70px; left: calc(-1 * var(--size) - 20px); line-height: var(--size); width: var(--size); height: var(--size); top: 0; background: #DFD1AC; border-radius: 50%; text-align: center; color: #333333; font-weight: normal; margin-top: -10px; }
+		ol li span { font-weight: normal; text-transform: initial; color: #333333; }
+		.floater-links { position: fixed; right: 100px; bottom: 60px; }
+		footer { margin-top: 40px; background: #333333; padding: 40px 0; border-bottom: 15px solid #1D1D1D; }
+		footer .row { margin-right: 0; }
+		@media only screen and (max-width:800px) {
+		.tamarin-logo { margin-left: -100px; width: 200px; margin-top: 20px; }
+		.navbar-toggler-icon { background: url(images/menu.svg); background-repeat: no-repeat; }
+		.navbar-toggler { border: 0 !important; padding: 0; width: 50px; height: 50px; }
+		button:focus { outline: 0; outline: 0 }
+		.navbar-collapse { background: #FEFAE0; border-radius: 0 0 30px 30px; width: 100%; border-top: 0; }
+		.navbar-nav li:nth-child(3) { display: none; }
+		.d-mob { display: block !important; }
+		.d-web { display: none !important; }
+		section { height: initial; display: block; align-items: initial; justify-content: initial; }
+		.anchor { display: none; }
+		.container { margin-top: 30px; }
+		#tokenomics > .container .row .col-xl-4 { margin-bottom: 30px; }
+		#tokenomics > .container .row .col-xl-4:nth-child(2), #tokenomics > .container .row .col-xl-4:nth-child(3) { width: 50%; margin-bottom: 70px; }
+		.token-address { margin: initial; padding: 15px 30px; border-radius: 60px; letter-spacing: 0.1em; color: #E5661D; max-width: 340px; text-align: center; display: inherit; }
+		.floater-links { right: 36px; bottom: 36px; }
+		img { max-width: 100%; }
+		.navbar { max-width: 340px; margin-top: 30px; }
+		.bsc-cta { padding: 10px; }
+		.section-title { font-size: 62px; margin-bottom: 30px; text-align: center; line-height: initial; }
+		.feature-block { text-align: center; margin: 0 30px 60px; }
+		.center-objects { align-items: center; margin-top: 20px; padding: 0 40px; }
+		#charity > .container .row .col-xl-4 { width: 33.3%; margin-bottom: 20px; }
+		.charity-stats { margin: initial; margin-bottom: 60px; }
+		footer { padding: 30px 0 30px 0; }
+		footer .row .col-12 { padding: 0; justify-content: flex-start !important; }
+		.social-icos > li img { width: 46px; }
+		ul { margin-bottom: 0; }
+		}
+		</style>
+	</head>
+<body class="main-bg">
+	<div class="offset-bg"></div>
+	<div class="header-block">
+		<a class="d-mob header-block navbar-brand tamarin-logo" href="https://tama.finance/#"><img src="./logo.svg" alt="Tamarin Finance"></a>
+		<nav class="navbar navbar-expand-lg w1080">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="https://tama.finance/#tokenomics">Tokenomics</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://tama.finance/#safety">Safety</a>
+					</li>
+					<li class="nav-item"><a class="navbar-brand tamarin-logo" href="https://tama.finance/#"><img src="./logo.svg" alt="Tamarin Finance"></a></li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="https://tama.finance/#onboarding">Onboarding</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://tama.finance/#charity">Charity</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<section id="tokenomics">
+		<div class="container">
+			<div class="row stats-display">
+				<div class="col-xl-4 text-center">
+					<div class="pretitle marine-bold">TOKEN NAME</div>
+					<div class="figures komu">$TAMA</div>
+					<div class="endtitle marine-bold">BSC</div>
+				</div>
+				<div class="col-xl-4 text-center">
+					<div class="pretitle marine-bold">TOTAL SUPPLY</div>
+					<div class="figures komu">01</div>
+					<div class="endtitle marine-bold">Quadrillion</div>
+				</div>
+				<div class="col-xl-4 text-center">
+					<div class="pretitle marine-bold">PRESALE</div>
+					<div class="figures komu">49</div>
+					<div class="endtitle marine-bold">Trillion</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-12 d-flex justify-content-center">
+					<img class="d-web" style="padding: 50px 35px 55px 170px;" src="./web-graph.svg" alt="">
+					<img class="d-mob" style="padding: 0 35px 40px 35px;" src="./mobile-graph.svg" alt="">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="token-address marine-bold">BSC Token address: <span>0x0f1c6791a8b8d764c78dd54f0a151ec4d3a0c090</span></div>
+					<a class="d-flex justify-content-center align-items-center marine-bold bsc-cta" href="https://bscscan.com/address/0x0f1c6791a8b8d764c78dd54f0a151ec4d3a0c090#code" target="_blank"><img style="margin: 10px !important;" src="./bsc-small.svg">Verified contract address</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="safety">
+		<div class="anchor"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-7">
+					<div class="komu section-title">MOST <span>SECURE</span> TOKENS</div>
+					<div class="row">
+						<div class="col-md-5 feature-block">
+							<h4 class="marine-bold">Timelock Controller</h4>
+							<p>The owner of the Tamarin contract. Any owner calls, such as swapping BNB to TAMA and burning, must be proposed to the Timelock.</p>
+							<p>Those proposals are visible for 24hrs before they can be acted on, giving the entire community ample time to witness governance actions.</p>
+							<a href="https://bscscan.com/address/0x1cbf294da261a2ce3be9ac8319daae1989bead40" target="_blank">View contract</a>
+						</div>
+						<div class="col-md-5 feature-block">
+							<h4 class="marine-bold">Protocol Multisig</h4>
+							<p>A 3/5 signature wallet to propose to the Timelock. The power of the owner has also been curtailed, with immutable upper bounds on TAMA fees added to the contract.</p>
+							<a href="https://gnosis-safe.binance.org/#/safes/0xc7B77940E326df9e82FFE45413ce1A6936c38E80/balances" target="_blank">View contract</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-5 text-center d-flex"><img src="./timelock.svg"></div>
+			</div>
+		</div>
+	</section>
+	<section id="onboarding">
+		<div class="anchor"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 text-center"><img src="./device.svg"></div>
+				<div class="col-xl-6 center-objects">
+					<div class="komu section-title"><span>Trusted </span>Wallets</div>
+					<ol>
+						<li>Deadbeef <br><span>A burn address where our LP tokens and excess TAMA are sent. Guaranteeing forever liquidity and deflation.</span></li>
+						<li>Team Timelocks <br><span>We're here for the long term, which is why we've allocated 1.75% to the team vesting over two years. No funds are accessible until 1 full year from launch.</span></li>
+						<li>DXSale Locker <br><span>We launched our token using DXSale and subsequently locked our liquidity until 4/20/2069 on DXSale. 97% of raised BNB is locked in the liquidity pool.</span></li>
+					</ol>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="charity">
+		<div class="anchor"></div>
+		<div class="container">
+			<div class="komu section-title text-center"><span>Charity </span></div>
+			<div class="row">
+				<!-- <div class="col-xl-4"><img src="images/charity-logo-01.svg"></div> -->
+				<div class="col-xl-12 d-flex justify-content-center"><img src="./charity-logo-02.svg"></div>
+				<!-- <div class="col-xl-4"><img src="images/charity-logo-01.svg"></div> -->
+			</div>
+			<div class="row">
+				<div class="col-12 d-flex justify-content-center">
+					<p class="text-center" style="max-width: 640px;">Rather than burning 47% of our supply, we've decided to "burn it to time". 10% of the supply has been locked, vesting over a 50 year period and only accessible by the Binance.Charity donation wallet.</p>
+				</div>
+			</div>
+			<div class="row charity-stats">
+				<div class="col-xl-4 text-center">
+					<div class="figures komu">10YR</div>
+					<div class="endtitle marine-bold">2%</div>
+					<a class="link" href="https://bscscan.com/address/0xb2c938f06bb0d3f01a4c8b6a65ecb02dfccebc22" target="_blank">View</a>
+				</div>
+				<div class="col-xl-4 text-center">
+					<div class="figures komu">25YR</div>
+					<div class="endtitle marine-bold">3%</div>
+					<a class="link" href="https://bscscan.com/address/0x7a766d105f80a37a469d486c2aa5aea6ab624b5a" target="_blank">View</a>
+				</div>
+				<div class="col-xl-4 text-center">
+					<div class="figures komu">50YR</div>
+					<div class="endtitle marine-bold">5%</div>
+					<a class="link" href="https://bscscan.com/address/0xf1bbc89f8b0a07d162078f12a62a1bac80dcef77" target="_blank">View </a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-12 d-flex justify-content-center  text-center">
+					<img class="" src="./gnosis-safe.svg">
+				</div>
+				<div class="col-12 d-flex justify-content-center text-center">
+					<p class="text-center" style="max-width: 640px;">Our goal is trust and transparency, that's why all charitable funds are protected in a 4/5 signatures required multisig. Those funds belong to the will of the community and the multisig is an executor of that will.</p>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-xl-12 d-flex justify-content-center text-center">
+					<a class="link text-center" href="https://gnosis-safe.binance.org/#/safes/0xD766ea4836cBfA926529b21A8396f1A326459c47/balances" target="_blank">View</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer class="text-center">
+		<div class="row">
+			<div class="col-12 d-flex justify-content-center ">
+				<ul class="social-icos">
+					<li><a href="https://twitter.com/TamarinToken" target="_blank"><img src="./twitter.svg" alt="Twitter"></a></li>
+					<li><a href="https://bscscan.com/token/0x0f1c6791a8b8d764c78dd54f0a151ec4d3a0c090" target="_blank"><img src="./bsc.svg" alt="BSC"></a></li>
+					<li><a href="https://tamafinance.medium.com/introducing-the-tamarin-token-bc2518705f67" target="_blank"><img src="./medium.svg" alt="Medium"></a>
+				</li></ul>
+			</div>
+		</div>
+	</footer>
+	<div class="floater-links">
+		<a href="https://t.me/tamafinance" target="_blank"><img src="./telegram.svg" alt="Telegram"></a>
+	</div>
+	<script src="./jquery-3.4.1.min.js"></script>
+	<script src="./popper.min.js"></script>
+	<script src="./bootstrap-4.4.1.js"></script>
+
+</body></html>
