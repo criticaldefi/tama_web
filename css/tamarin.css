@@ -1,94 +1,622 @@
-html { scroll-behavior: smooth; }
-body { background: #F4EACE; font-family: marine, sans-serif; font-weight: normal; }
-.marine { font-family: marine, sans-serif; font-weight: 400; font-style: normal; }
-.marine-bold { font-family: marine, sans-serif; font-weight: 700; font-style: normal; }
-.komu { font-family: komu-a, sans-serif; font-weight: 400; font-style: normal; }
-.btn-primary { background: #E5661D; color: #F3E7C9; font-size: 21px; border-radius: 100px; border-radius: 100px; letter-spacing: 0.1em; padding: 16px 54px; }
-.btn-primary:hover { background: #E5661D; text-decoration: none; }
-.text-cta { font-size: 21px; color: #E5661D; text-decoration: underline; letter-spacing: 0.1em; }
-#home .container { margin-top: 0; }
-a:hover { color: initial; }
-.w1080 { max-width: 1080px; margin: 0 auto; }
-section { height: 100vh; display: flex; align-items: center; justify-content: center; }
-.header-block { position: fixed; margin-left: -550px; width: 1100px; left: 50%; z-index: 4 }
-.offset-bg { position: fixed; width: 100%; height: 160px; z-index: 2;		/* background: rgb(240,227,195); */ background: linear-gradient(180deg, rgb(240 227 195) 40%, rgb(240 227 195 / 1%) 100%); }
-.navbar { background: #FEFAE0; border-radius: 60px; margin-top: 60px; height: 60px; z-index: 3 }
-.navbar-nav { max-width: 1080px; margin: 0 auto; align-content: center; flex-wrap: nowrap; align-items: center; }
-.tamarin-logo { position: absolute; left: 50%; margin-left: -120px; width: 240px; margin-top: -21px; margin-right: 0; padding: 0; }
-.nav-link { display: block; padding: 1rem; font-family: 'marine'; color: #333333; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 0.1em; text-align: center; margin-left: auto; }
-.nav-item { margin: 0 15px; }
+html {
+	
+}
+
+body {
+	background: #FFFEF5;
+	font-family: marine, sans-serif;
+	font-weight: normal;
+}
+.animate__delay-05s {
+  --animate-delay: 0.5s;
+}
+.marine {
+	font-family: marine, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.marine-bold {
+	font-family: marine, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+.komu {
+	font-family: komu-a, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.btn-primary {
+	background: #E5661D;
+	color: #F3E7C9;
+	font-size: 21px;
+	border-radius: 100px;
+	border-radius: 100px;
+	letter-spacing: 0.1em;
+	padding: 16px 54px;
+}
+
+.btn-primary:hover {
+	background: #E5661D;
+	text-decoration: none;
+}
+
+.text-cta {
+	font-size: 21px;
+	color: #E5661D;
+	text-decoration: underline;
+	letter-spacing: 0.1em;
+}
+
+#home{
+	background-color: #F4EACE;
+	background-image: url(../images/bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#home .container {
+	padding: 220px 0px 140px 45px;
+}
+
+
+a:hover {
+	color: initial;
+}
+
+.w1080 {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+section {
+	min-height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-block {
+	position: fixed;
+	margin-left: -550px;
+	width: 1100px;
+	left: 50%;
+	z-index: 4
+}
+
+.offset-bg {
+	position: fixed;
+	width: 100%;
+	height: 160px;
+	z-index: 2;		/* background: rgb(240,227,195); */
+	background: linear-gradient(180deg, rgb(240 227 195) 40%, rgb(240 227 195 / 1%) 100%);
+}
+
+.navbar {
+	background: #FEFAE0;
+	border-radius: 60px;
+	margin-top: 60px;
+	height: 60px;
+	z-index: 3
+}
+
+.navbar-nav {
+	max-width: 1080px;
+	margin: 0 auto;
+	align-content: center;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.navbar-brand{
+	margin-top: -5px;
+    margin-right: -6px;
+}
+
+.tamarin-logo {
+	position: absolute;
+	left: 50%;
+	margin-left: -120px;
+	width: 240px;
+	margin-top: -21px;
+	margin-right: 0;
+	padding: 0;
+}
+.tama-rocketing{
+	position: absolute;
+    width: 100%;
+    left: -30px;
+    top: -60px;
+}
+
+.nav-link {
+	display: block;
+	padding: 1rem;
+	font-family: 'marine';
+	color: #333333;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin-left: auto;
+}
+
+.nav-item {
+	margin: 0 13px;
+}
 
 /*.navbar-nav li:nth-child(4) { width: 230px; }*/
-.main-bg { background-image: url(../images/bg.png); background-repeat: no-repeat; background-size: cover; height: 70vh; margin: 0; height: 70%; background-attachment: fixed; background-size: cover; }
-.container { margin-top: 120px; }
-.stats-display { }
-.pretitle, .endtitle { color: #333333; font-size: 16px; }
-.figures { color: #E5661D; font-size: 62px; line-height: initial; }
-.d-web { display: block !important; }
-.d-mob { display: none !important; }
-.token-address { background: #FEFAE0; width: max-content; margin: 0 auto; padding: 15px 30px; border-radius: 60px; letter-spacing: 0.1em; color: #E5661D; }
-.token-address span { color: #333333; word-wrap: break-word; }
-.bsc-cta { letter-spacing: 0.1em; color: #E5661D; padding: 20px; text-transform: uppercase; }
-.anchor { display: block; height: 210px; visibility: hidden; }
+.main-bg {
+	
+	height: 70vh;
+	margin: 0;
+	height: 70%;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.container {
+
+}
+
+.stats-display {
+	justify-content: center;
+}
+
+.pretitle,
+.endtitle {
+	color: #333333;
+	font-size: 16px;
+}
+
+.figures {
+	color: #E5661D;
+	font-size: 62px;
+	line-height: initial;
+}
+
+.d-web {
+	display: block !important;
+}
+
+.d-mob {
+	display: none !important;
+}
+
+.token-address {
+	background: #FEFAE0;
+	width: max-content;
+	margin: 0 auto;
+	padding: 15px 30px;
+	border-radius: 60px;
+	letter-spacing: 0.1em;
+	color: #E5661D;
+}
+
+.token-address span {
+	color: #333333;
+	word-wrap: break-word;
+}
+
+.bsc-cta {
+	letter-spacing: 0.1em;
+	color: #E5661D;
+	padding: 20px;
+	text-transform: uppercase;
+}
+
+.anchor {
+	display: block;
+	height: 210px;
+	visibility: hidden;
+}
 
 /*#tokenomics {padding: 120px 0;}
 #safety {padding: 170px 0;}
 #onboarding {padding: 120px 0;}
 #charity  {padding: 120px 0;}*/
-#tokenomics { padding-top: 120px; }
-#tokenomics .container { margin-top: 0; }
-.section-title { font-size: 52px; margin-bottom: 10px; }
-.section-title span { color: #E5661D; }
-.feature-block { margin-right: 30px; }
-.feature-block h4, ol li { text-transform: uppercase; font-size: 16px; letter-spacing: 0.1em; font-weight: bold; }
-p, .feature-block p { font-size: 16px; letter-spacing: 0.05em; word-break: break-word; }
-.feature-block a, .link { color: #E5661D; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: underline; }
-.center-objects { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; justify-content: center; margin-top: -60px; }
-.charity-stats { margin: 40px 60px 70px; }
-ul { display: flex; }
-ul li a { padding: 0 15px; }
-li { list-style: none; }
-.social-icos ul { display: flex; padding: 0; margin: 0; list-style: none; }
-.social-icos > li { display: flex; justify-content: space-around; list-style: none; }
-.social-icos > li img { width: 32px; height: 100%; }
-ol { max-width: 380px; counter-reset: my-awesome-counter; list-style: none; padding-left: 40px; margin-left: 45px; }
-ol li { margin: 0 0 0.5rem 0; counter-increment: my-awesome-counter; position: relative; margin-bottom: 50px; }
-ol li::before { font-family: 'komu-a', sans-serif; content: "0"counter(my-awesome-counter); font-size: 32px; position: absolute; --size: 70px; left: calc(-1 * var(--size) - 20px); line-height: var(--size); width: var(--size); height: var(--size); top: 0; background: #DFD1AC; border-radius: 50%; text-align: center; color: #333333; font-weight: normal; margin-top: -10px; }
-ol li span { font-weight: normal; text-transform: initial; color: #333333; }
-.floater-links { position: fixed; right: 100px; bottom: 60px; display: grid; }
-.floater-links a { margin-bottom: 15px }
-footer { margin-top: 40px; background: #333333; padding: 40px 0; border-bottom: 15px solid #1D1D1D; }
-footer .row { margin-right: 0; }
+#tokenomics {
+	padding-top: 70px;
+    padding-bottom:70px;
+}
+
+#tokenomics .container {
+	margin-top: 0;
+}
+#safety{
+	background: #F4EACE;
+	min-height: 60vh;
+}
+#wallets{
+    padding: 130px 0;
+}
+#charity{
+	background: #F4EACE;
+	padding: 70px 0;
+}
+#how-to-buy{
+    padding: 70px 0 0;
+}
+.section-title {
+	font-size: 52px;
+	margin-bottom: 10px;
+}
+
+.section-title span {
+	color: #E5661D;
+}
+
+.feature-block {
+	margin-right: 30px;
+}
+
+.feature-block h4,
+ol li {
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+p,
+.feature-block p {
+	font-size: 16px;
+	letter-spacing: 0.05em;
+	word-break: break-word;
+}
+
+.feature-block a,
+.link {
+	color: #E5661D;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	text-decoration: underline;
+}
+
+.center-objects {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: center;
+	margin-top: -60px;
+}
+
+.charity-stats {
+	margin: 40px 60px 70px;
+	justify-content: center;
+}
+
+ul {
+	display: flex;
+}
+
+ul li a {
+	padding: 0 15px;
+}
+
+li {
+	list-style: none;
+}
+
+.social-icos ul {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.social-icos > li {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+}
+
+.social-icos > li img {
+	width: 32px;
+	height: 100%;
+}
+
+ol {
+	max-width: 380px;
+	counter-reset: my-awesome-counter;
+	list-style: none;
+	padding-left: 40px;
+	margin-left: 45px;
+}
+
+ol li {
+	margin: 0 0 0.5rem 0;
+	counter-increment: my-awesome-counter;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+ol li::before {
+	font-family: 'komu-a', sans-serif;
+	content: "0"counter(my-awesome-counter);
+	font-size: 32px;
+	position: absolute;
+	--size: 70px;
+	left: calc(-1 * var(--size) - 20px);
+	line-height: var(--size);
+	width: var(--size);
+	height: var(--size);
+	top: 0;
+	background: #DFD1AC;
+	border-radius: 50%;
+	text-align: center;
+	color: #333333;
+	font-weight: normal;
+	margin-top: -10px;
+}
+
+ol li span {
+	font-weight: normal;
+	text-transform: initial;
+	color: #333333;
+}
+
+.floater-links {
+	position: fixed;
+	right: 100px;
+	bottom: 60px;
+	display: grid;
+}
+
+.floater-links a {
+	margin-bottom: 15px
+}
+
+footer {
+	margin-top: 40px;
+	background: #333333;
+	padding: 40px 0;
+	border-bottom: 15px solid #1D1D1D;
+}
+
+footer .row {
+	margin-right: 0;
+}
+
+
+
+#my-video{
+	margin: 50px 0 55px 120px;
+}
+
+.vjs-control-bar{
+	display: none !important;
+
+}
+/*Animationizer*/
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.floating-tama{
+	position: absolute;
+    width: 40%;
+    transform: translatey(0px);
+	animation: float 4s ease-in-out infinite;
+    margin-left: 30px;
+    margin-top: 90px;
+}
+
+.tama-rocketing{
+	animation: float 4s ease-in-out infinite;
+}
+
 @media only screen and (max-width:800px) {
-	.tamarin-logo { margin-left: -100px; width: 200px; margin-top: 20px; }
-	.navbar-toggler-icon { background: url(../images/menu.svg); background-repeat: no-repeat; }
-	.navbar-toggler { border: 0 !important; padding: 0; width: 50px; height: 50px; }
-	button:focus { outline: 0; outline: 0 }
-	.navbar-collapse { background: #FEFAE0; border-radius: 0 0 30px 30px; width: 100%; border-top: 0; }
-	.navbar-nav li:nth-child(3) { display: none; }
-	.d-mob { display: block !important; }
-	.d-web { display: none !important; }
-	section { height: initial; display: block; align-items: initial; justify-content: initial; }
-	.anchor { display: none; }
-	.container { margin-top: 30px; }
-	#tokenomics > .container .row .col-xl-4 { margin-bottom: 30px; }
-	#tokenomics > .container .row .col-xl-4:nth-child(3) { margin-bottom: 70px; }
-	.token-address { margin: initial; padding: 15px 30px; border-radius: 60px; letter-spacing: 0.1em; color: #E5661D; max-width: 340px; text-align: center; display: inherit; }
-	.floater-links { right: 36px; bottom: 36px; }
-	img { max-width: 100%; }
-	.navbar { max-width: 340px; margin-top: 30px; }
-	.bsc-cta { padding: 10px; }
-	.section-title { font-size: 62px; margin-bottom: 30px; text-align: center; line-height: initial; }
-	#home .section-title { font-size: 52px; padding: 0 !important; margin-top: 150px; }
-	#home p { text-align: center; padding: 0 !important; }
-	#home .mobile-cta { text-align: center; padding: 20px !important; }
-	#home .mobile-cta .col-xl-3 { margin-top: 30px; }
-	.feature-block { text-align: center; margin: 0 30px 60px; }
-	.center-objects { align-items: center; margin-top: 20px; padding: 0 40px; }
-	#charity > .container .row .col-xl-4 { width: 33.3%; margin-bottom: 20px; }
-	.charity-stats { margin: initial; margin-bottom: 60px; }
-	footer { padding: 30px 0 30px 0; }
-	footer .row .col-12 { padding: 0; justify-content: flex-start !important; }
-	.social-icos > li img { width: 46px; }
-	ul { margin-bottom: 0; }
+	.offset-bg{
+		top: 0;
+	}
+	.header-block {
+	    top: 0;
+	}
+	.tamarin-logo {
+		margin-left: -100px;
+		width: 200px;
+		margin-top: 20px;
+	}
+
+	.navbar-toggler-icon {
+		background: url(../images/menu.svg);
+		background-repeat: no-repeat;
+	}
+
+	.navbar-toggler {
+		border: 0 !important;
+		padding: 0;
+		width: 50px;
+		height: 50px;
+	}
+
+	button:focus {
+		outline: 0;
+		outline: 0
+	}
+
+	.navbar-collapse {
+		background: #FEFAE0;
+		border-radius: 0 0 30px 30px;
+		width: 100%;
+		border-top: 0;
+	}
+
+	.navbar-nav li:nth-child(3) {
+		display: none;
+	}
+
+	.d-mob {
+		display: block !important;
+	}
+
+	.d-web {
+		display: none !important;
+	}
+
+	section {
+		height: initial;
+		display: block;
+		align-items: initial;
+		justify-content: initial;
+	}
+
+	.anchor {
+		display: none;
+	}
+
+	.container {
+		margin-top: 30px;
+	}
+	#home .container {
+	    padding: 0 30px 30px;
+	}
+	#tokenomics {
+    	padding-bottom: 20px;
+	}
+	#tokenomics > .container .row .col-xl-4 {
+		margin-bottom: 30px;
+	}
+
+	#tokenomics > .container .row .col-xl-4:nth-child(3) {
+		margin-bottom: 70px;
+	}
+
+	.stats-display .col-xl-3{
+		margin-bottom: 30px;
+	}
+
+	.token-address {
+		margin: initial;
+		padding: 15px 30px;
+		border-radius: 60px;
+		letter-spacing: 0.1em;
+		color: #E5661D;
+		max-width: 340px;
+		text-align: center;
+		display: inherit;
+	}
+
+	.floater-links {
+		right: 36px;
+		bottom: 36px;
+	}
+
+	.floating-tama{
+		width: 65%;
+	}
+
+	#safety{
+		padding:  30px 0 40px;
+	}
+
+		#wallets {
+	    padding: 40px 0;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	.navbar {
+		max-width: 340px;
+		margin-top: 30px;
+	}
+
+	.bsc-cta {
+		padding: 10px;
+	}
+
+	.section-title {
+		font-size: 62px;
+		margin-bottom: 30px;
+		text-align: center;
+		line-height: initial;
+	}
+
+	#home .section-title {
+		font-size: 52px;
+		padding: 0 !important;
+		margin-top: 150px;
+	}
+
+	#home p {
+		text-align: center;
+		padding: 0 !important;
+	}
+
+	#home .mobile-cta {
+		text-align: center;
+		padding: 20px !important;
+		margin-bottom: 70px;
+	}
+
+	#home .mobile-cta .col-xl-3 {
+		margin-top: 30px;
+	}
+
+	.feature-block {
+		text-align: center;
+		margin: 0 30px 60px;
+	}
+
+	.center-objects {
+		align-items: center;
+		margin-top: 20px;
+		padding: 0 40px;
+	}
+
+	#charity {
+	    padding: 30px 0 50px;
+	}
+
+	#charity > .container .row .col-xl-4 {
+		width: 33.3%;
+		margin-bottom: 20px;
+	}
+
+	.charity-stats {
+		margin: initial;
+		margin-bottom: 20px;
+	}
+
+	.charity-stats .col-xl-3{
+		margin-bottom: 30px;
+	}
+
+	#how-to-buy {
+	    padding: 30px 0 0;
+	}
+
+	footer {
+		padding: 30px 0 30px 0;
+	}
+
+	footer .row .col-12 {
+		padding: 0;
+		justify-content: flex-start !important;
+	}
+
+	.social-icos > li img {
+		width: 46px;
+	}
+
+	ul {
+		margin-bottom: 0;
+	}
+
 }
